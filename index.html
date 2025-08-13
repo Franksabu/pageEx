@@ -9,11 +9,21 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f0f2f5;
       color: #333;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -45,6 +55,7 @@
     }
 
     main {
+      flex: 1;
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
@@ -77,56 +88,58 @@
       padding: 20px;
       background-color: #2c3e50;
       color: white;
-      margin-top: 60px;
     }
   </style>
 </head>
 <body>
+  <div class="wrapper">
 
-  <header>
-    <h1>Bienvenue sur le site de Frank</h1>
-  </header>
+    <header>
+      <h1>Bienvenue sur le site de Frank</h1>
+    </header>
 
-  <!-- 🔽 Barre de navigation -->
-  <nav>
-    <a href="#" onclick="afficherSection('accueil')">Accueil</a>
-    <a href="#" onclick="afficherSection('apropos')">À propos</a>
-    <a href="#" onclick="afficherSection('contact')">Contact</a>
-  </nav>
+    <!-- 🔽 Barre de navigation -->
+    <nav>
+      <a href="#" onclick="afficherSection('accueil')">Accueil</a>
+      <a href="#" onclick="afficherSection('apropos')">À propos</a>
+      <a href="#" onclick="afficherSection('contact')">Contact</a>
+    </nav>
 
-  <main>
-    <!-- 🔽 Section Accueil -->
-    <section id="accueil" class="section active">
-      <div class="info-section">
-        <h2>Accueil</h2>
-        <p>👋 Bonjour et bienvenue ! Ce site est un espace personnel où je partage mes projets, compétences et moyens de me contacter.</p>
-        <p>Naviguez dans les sections ci-dessus pour en savoir plus sur moi.</p>
-      </div>
-    </section>
+    <main>
+      <!-- 🔽 Section Accueil -->
+      <section id="accueil" class="section active">
+        <div class="info-section">
+          <h2>Accueil</h2>
+          <p>👋 Bonjour et bienvenue ! Ce site est un espace personnel où je partage mes projets, compétences et moyens de me contacter.</p>
+          <p>Naviguez dans les sections ci-dessus pour en savoir plus sur moi.</p>
+        </div>
+      </section>
 
-    <!-- 🔽 Section À propos -->
-    <section id="apropos" class="section">
-      <div class="info-section">
-        <h2>À propos</h2>
-        <p>👨‍💻 Je suis Frank, passionné par le développement web et les nouvelles technologies. J’aime créer des interfaces simples, efficaces et accessibles à tous.</p>
-        <p>🎯 Objectif : Apprendre chaque jour et construire des projets utiles, que ce soit en HTML/CSS, JavaScript ou avec des frameworks modernes.</p>
-      </div>
-    </section>
+      <!-- 🔽 Section À propos -->
+      <section id="apropos" class="section">
+        <div class="info-section">
+          <h2>À propos</h2>
+          <p>👨‍💻 Je suis Frank, passionné par le développement web et les nouvelles technologies. J’aime créer des interfaces simples, efficaces et accessibles à tous.</p>
+          <p>🎯 Objectif : Apprendre chaque jour et construire des projets utiles, que ce soit en HTML/CSS, JavaScript ou avec des frameworks modernes.</p>
+        </div>
+      </section>
 
-    <!-- 🔽 Section Contact -->
-    <section id="contact" class="section">
-      <div class="info-section">
-        <h2>Contact</h2>
-        <p>📧 Email : <a href="mailto:frank@example.com">frank@example.com</a></p>
-        <p>📞 Téléphone : +33 6 12 34 56 78</p>
-        <p>💼 LinkedIn : <a href="https://linkedin.com/in/frank" target="_blank">linkedin.com/in/frank</a></p>
-      </div>
-    </section>
-  </main>
+      <!-- 🔽 Section Contact -->
+      <section id="contact" class="section">
+        <div class="info-section">
+          <h2>Contact</h2>
+          <p>📧 Email : <a href="mailto:frank@example.com">frank@example.com</a></p>
+          <p>📞 Téléphone : +33 6 12 34 56 78</p>
+          <p>💼 LinkedIn : <a href="https://linkedin.com/in/frank" target="_blank">linkedin.com/in/frank</a></p>
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    © 2025 - Frank | Tous droits réservés
-  </footer>
+    <footer>
+      © 2025 - Frank | Tous droits réservés
+    </footer>
+
+  </div>
 
   <script>
     function afficherSection(sectionId) {
@@ -137,6 +150,5 @@
       document.getElementById(sectionId).classList.add('active');
     }
   </script>
-
 </body>
 </html>
